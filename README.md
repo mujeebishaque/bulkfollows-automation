@@ -10,6 +10,24 @@ When a new order is placed, the bulkfollows api returns the Order ID. This ID is
 
 It can also place bulk orders. To generate mass order, you have to Add orders in the format told in the website, i.e., ajsd123|123123|123123; OrderID;Link;Quantity. After this, you can click on Generate Mass Order button.
 
+### Check Order Status Code?
+
+```
+    def check_order_status(self, order_id=None):
+        if order_id:
+            self.ORDER_ID = order_id
+        if self.ORDER_ID is None:
+            return "No Order Placed."
+        order = requests.post(self.API_URL, {'key':self.API_KEY, 'action':'status', 'order':self.ORDER_ID})
+        if order.ok:
+            _data = json.loads(order.text)
+            return f"Total Remaining: {_data['remains']}"
+        else:
+            return "Order Status Check Failed."
+```
+
+Placing Order is very simple via the bulkfollows API.
+
 ![front page bulkfollows automation mujeebishaque](https://github.com/mujeebishaque/bulkfollows-automation/blob/main/bin/first.png)
 
 Second Tab of the software for storing the API key. The API key is stored in a text file created in the current working directory.
