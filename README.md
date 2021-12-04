@@ -7,6 +7,9 @@ When a new order is placed, the bulkfollows api returns the Order ID. This ID is
 
 > Add your data and let it place orders for you. 
 
+
+It can also place bulk orders. To generate mass order, you have to Add orders in the format told in the website, i.e., ajsd123|123123|123123; OrderID;Link;Quantity. After this, you can click on Generate Mass Order button.
+
 ![front page bulkfollows automation mujeebishaque](https://github.com/mujeebishaque/bulkfollows-automation/blob/main/bin/first.png)
 
 Second Tab of the software for storing the API key. The API key is stored in a text file created in the current working directory.
